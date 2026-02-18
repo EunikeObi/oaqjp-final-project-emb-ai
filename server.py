@@ -13,7 +13,6 @@ def Main():
     joy = response['joy']
     sadness = response['sadness']
     dominant = response['dominant_emotion']
-    status = response['status_code']
 
     if dominant == None:
         return_text = "Invalid text! Please try again!"
