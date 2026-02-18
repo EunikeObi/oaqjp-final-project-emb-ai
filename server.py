@@ -13,9 +13,13 @@ def Main():
     joy = response['joy']
     sadness = response['sadness']
     dominant = response['dominant_emotion']
+    status = response['status_code']
 
-    return_text = f"For the given statement, the system response is 'anger': {anger}, 'disgust': {disgust}, 'fear': {fear}, 'joy': {joy}, 'sadness': {sadness}. The dominant emotion is {dominant}"
-    return return_text
+    if dominant == None:
+        return_text = "Invalid text! Please try again!"
+    else:
+        return_text = f"For the given statement, the system response is 'anger': {anger}, 'disgust': {disgust}, 'fear': {fear}, 'joy': {joy}, 'sadness': {sadness}. The dominant emotion is {dominant}"
+    return return_text 
 
 @app.route("/")
 def render_index_page():
